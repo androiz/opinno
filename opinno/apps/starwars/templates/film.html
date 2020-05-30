@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <img class="film-image" src="{{ film.image.url }}">
+    </div>
+    <div class="col">
+        <div>
+            <h1>Episode {{ film.episode_id }}</h1>
+        </div>
+        <div>
+            <h2>{{ film.title }}</h2>
+        </div>
+        <div>
+            Director: {{ film.director }}
+        </div>
+        <div>
+            Characters:
+            <ul>
+                {% for character in film.characters.all %}
+                    <li>
+                        <a href="{% url 'character' pk=character.pk %}">{{ character.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            Starships:
+            <ul>
+                {% for starship in film.starships.all %}
+                    <li>
+                        <a href="{% url 'starship' pk=starship.pk %}">{{ starship.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            Planets:
+            <ul>
+                {% for planet in film.planets.all %}
+                    <li>
+                        <a href="{% url 'planet' pk=planet.pk %}">{{ planet.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            {{ film.opening_crawl }}
+        </div>
+    </div>
+</div>
+
+    
+
+{% endblock %}

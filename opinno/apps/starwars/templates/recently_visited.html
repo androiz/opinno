@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% for visited in recently_visited %}
+            <li>
+                <a href="{{ visited.url }}">{{ visited.url }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

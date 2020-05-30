@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        Name: {{ character.name }}
+    </div>
+    <div>
+        Height: {{ character.height }}
+    </div>
+    <div>
+        Mass: {{ character.mass }}
+    </div>
+    <div>
+        Homeworld: <a href="{% url 'planet' pk=character.homeworld.pk %}">{{ character.homeworld.name }}</a>
+    </div>
+    <div>
+        Starships:
+        <ul>
+            {% for starship in character.starships.all %}
+                <li>
+                    <a href="{% url 'starship' pk=starship.pk %}">{{ starship.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

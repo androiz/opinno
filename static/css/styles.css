@@ -1,0 +1,29 @@
+.content {
+    max-width: 1000px;
+    padding-top: 20px;
+}
+.search-bar{
+    padding-top: 50px;
+}
+.film-list-wrapper{
+    margin-top: 50px;
+}
+.film{
+    padding: 25px;
+}
+.films-list-title{
+    text-align: center;
+}
+.films-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.film-content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.film-image{
+    max-width: 300px;
+    max-height: 500px;
+}
